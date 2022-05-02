@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  mysql:
+    hostname: mysql-hostname
+    image: mysql
+    container_name: root
+    volumes:
+      - db_prod:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 3306:3306
+
+networks:
+  prod_netw:
+volumes:
+  db_prod:
+
